@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="//cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+<script>
+var app = angular.module("myapp", []);
+app.controller("mainController", function($scope, $http) {
+  $scope.test = {};
+    $scope.testData = function() {
+      alert(1);
+        var  method = $scope.test.method || "get";
+        var parameter = $scope.test.parameters || "";
+        if ( method === "get") {
+            $http({
+                method: "get",
+                url: $scope.test.url + "?" +parameter
+            }).success(function(response) {
+                $scope.res = response;
+            })
+        } else {
+            $http({
+                method: "post",
+                url: url + "?" + 　parameter
+            }).success(function(response) {
+                $scope.res = response;
+            })
+        }
+    }
+});
+</script>
+<body ng-app="myapp" ng-controller="mainController">
+    <form ng-submit="testData()">
+        <select name="method" id="" ng-model="test.method">
+            <option value="get">get</option>
+            <option value="post">post</option>
+        </select>
+        <input type="text" name="url" ng-model="test.url" placeholder="请求地址">
+        <input type="text" name="parameters" ng-model="test.parameters" placeholder="parameters" />
+        <input type="submit" >
+    </form>
+    <h4>方法：{{test.method}}</h4>
+    <h4><small>url：{{test.url}}</small></h4>
+    <h5>参数：{{test.parameters}}</h5> 
+    <p>返回结果：</p>
+    <p>{{res}}</p>
+</body>
+ 
+
+</html>
