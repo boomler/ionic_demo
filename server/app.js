@@ -9,8 +9,7 @@ var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
 var cookieParser = require("cookie-parser");
 var session = require('express-session');
-
-qvar config = require("./config");
+var config = require("./config");
 var userhandler = require("./controller/userHandler");
 var bookhandler = require("./controller/bookhandler");
 app.use(bodyParser.json("{type:'application/*+json'}"));
