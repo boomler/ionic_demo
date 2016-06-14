@@ -36,6 +36,16 @@ module.exports = exports = {
 			}
 		})
 
+	},
+	collectBook:function(uid,bid,callback){
+		var queryStr = "insert into user_book (uid,bid) values ("+uid + ","+bid+ ")"
+		console.log(queryStr)
+		connection.conn.query(queryStr,function(err,rows){
+			if(err)
+				console.error(err)
+			else
+				callback("1")
+		})
 	}
 	// getDetail:function(bid){
 	// 	if(bid != ""){

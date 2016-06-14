@@ -40,6 +40,7 @@ app.get("/friendList", userhandler.friendList);
 app.get("/hotBooks/:uid",bookhandler.hotBooks);
 app.get("/bookDetails/:bid",bookhandler.bookDetail);
 app.get("/collectedBooks/:bid/:page",bookhandler.collectedBooks);
+app.get("/collect/:uid/:bid",bookhandler.collectBook);
 
 // 个人收藏历史
 app.get("/personalCollection", bookhandler.personalCollection)

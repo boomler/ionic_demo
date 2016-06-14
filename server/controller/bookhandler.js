@@ -10,29 +10,36 @@ module.exports = exports = {
     hotBooks: function(req, res) {
         var uid = req.params.uid;
         console.log(uid);
-        var grade = user.getGrade(uid,function(grade) {
+        var grade = user.getGrade(uid, function(grade) {
             book.getGradeHotbooks(grade, function(bids) {
                 book.getGradeHotbooks(bids, stringify);
             })
         });
+
         function stringify(obj) {
             res.end(JSON.stringify(obj));
         }
     },
-    bookDetail:function(req,res){
-    	function stringify(obj) {
+    bookDetail: function(req, res) {
+        function stringify(obj) {
             res.end(JSON.stringify(obj));
         }
-    	var bookid = req.params.bid;
-    	book.getDetail(bookid,stringify);
+        var bookid = req.params.bid;
+        book.getDetail(bookid, stringify);
     },
-    collectedBooks:function(req,res){
-    	function stringify(obj) {
+    collectedBooks: function(req, res) {
+        function stringify(obj) {
             res.end(JSON.stringify(obj));
         }
-    	var bookid = req.params.bid;
-    	var page = req.params.page;
-    	book.collectedBooks(bookid,page,stringify);
+        var bookid = req.params.bid;
+        var page = req.params.page;
+        book.collectedBooks(bookid, page, stringify);
 
+    },
+    collectBook: function(req, res) {
+        var uid = req.params.uid;
+        var bid = req.params.bid;
+        console.log("BBBB")
+        book.collectBook(uid, bid, res.end)
     }
 }
