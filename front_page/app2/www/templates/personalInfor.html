@@ -1,0 +1,20 @@
+<ion-view  view-title="个人资料修改" >
+  <ion-content>
+    <div style="margin: 8px;">
+      <div >
+        <!--<i class="item item-divider">基本资料</i>-->
+        <i class="item item-thumbnail-left item-button-right">
+          <img ng-src="{{user.avatar}}">
+          <a class="button button-balanced " style="margin-top:20px;" href="#/picUpload">选择图片</a>
+        </i>
+        <i class="item">学号：{{user.id}}</i>
+        <i class="item">学院：{{user.school}}</i>
+        <i class="item">年级：{{user.grade}}</i>
+        <i class="item">性别：{{user.gender}}</i>
+        <i class="item">年龄：{{user.age}}</i>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

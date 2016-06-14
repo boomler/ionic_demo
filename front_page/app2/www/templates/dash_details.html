@@ -1,0 +1,36 @@
+<ion-view view-title="{{details.name}}">
+  <ion-nav-buttons side="right">
+    <a class="item button  button-clear" ng-href="#/testReading/{{details.id}}"  >试读</a>
+  </ion-nav-buttons>
+    <ion-content>
+        <img class="bookface" src="img/bainian.png">
+        <p ><span class="info">作者：</span>{{details.writer}}</p>
+        <p><span class="info">标签：</span></p>
+      <div>
+        <span class="info ">简介：</span><p class="introPadding">{{details.intro}}</p>
+      </div>
+
+
+        <div class="item item-divider ion-chevron-down" style="padding:20px;padding-left:10px;">同类读物</div>
+        <div class="row"><br><br><br>
+        </div>
+      <div class="item item-divider ion-chevron-down" style="padding:20px;padding-left:10px;">拓展读物</div>
+      <div class="row"><br><br><br>
+      </div>
+    </ion-content>
+  <!--<i class="bar bar-footer input_chat "  >-->
+    <!--<input class=" " style="width:70%;height: auto"/>-->
+    <!--<button class="button-clear ion-image" style="margin-left: 5px;"></button>-->
+    <!--<button class="button-clear " style="margin-left:  5px;">发送</button>-->
+  <!--</i>-->
+  <ion-footer-bar>
+    <div class="buttons">
+      <button class="button" ng-click="">顶一个</button>
+    </div>
+    <h1 class="title button button-balanced" ng-click="">写评论</h1>
+    <div class="buttons" ng-click="">
+      <button class="button " >踩一脚</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>
+

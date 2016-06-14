@@ -1,0 +1,23 @@
+<ion-view view-title="书库">
+  <ion-nav-buttons side="left">
+    <a class="item button ion-chevron-left" ng-click="backTopersonal()">个人中心</a>
+  </ion-nav-buttons>
+
+
+
+    <ion-content >
+      <ion-list show-delete="shouldShowDelete"
+                can-swipe="listCanSwipe">
+        <ion-item class="item-thumbnail-left" ng-repeat="item in book" href="#/Reading/{{item.id}}">
+            <img src="{{img}}">
+            <h2>{{item.name}}</h2>
+            <p>{{item.writer}}</p>
+          <ion-option-button class="button-positive" ng-click="delete_item(item)">
+            删除
+          </ion-option-button>
+          <ion-delete-button class="ion-minus-circled">
+          </ion-delete-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-view>

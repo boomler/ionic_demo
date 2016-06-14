@@ -1,0 +1,40 @@
+<ion-view  view-title="王浩爱编程的资料" >
+  <!-- 聊天框 -->
+  <ion-nav-buttons side="right">
+    <button class="icon   button-clear" ng-click="deleteFriend()" style="color: #ff3b30">删除TA</button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="card margin_top">
+      <div style="width: 100%;height: auto">
+        <div class="item item-image" style="width: 100%;height:160px;">
+          <img src="img/bkg.png" />
+        </div>
+        <div style="width: 100%;height:auto;;background-color: rgba(255, 255, 255, 0.99);position: relative;margin-top: -20px;z-index: 9999">
+          <img src="img/max.png" style="float: right;width: 80px;height: 80px;margin-right: 15%" />
+          <a style="float: right;margin-right: 15px;padding-top: 30px;text-align: center;font-size: 30px">王浩爱编程</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 8px;">
+      <div >
+        <i class="item item-divider">基本资料</i>
+        <i class="item">性别：男</i>
+        <i class="item">年龄：19</i>
+        <i class="item">标签：<span class="badge badge-assertive">计算机科学</span></i>
+
+      </div>
+      <div>
+        <i class="item item-divider">最近在读</i>
+        <div class="list">
+          <ion-item class="item-thumbnail-left" ng-repeat="item in books" href="#/Reading">
+            <img src="{{item.img}}">
+            <h2>{{item.name}}</h2>
+            <p>{{item.writer}}</p>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

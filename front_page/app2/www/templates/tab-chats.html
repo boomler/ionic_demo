@@ -1,0 +1,81 @@
+<ion-view view-title="好友中心">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="openPopover($event)">
+      <i class="icon ion-android-menu "></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete"
+              can-swipe="listCanSwipe"
+    >
+        <ion-item class="item item-divider">
+          A
+        </ion-item>
+        <ion-item class="item item-avatar" href="#/chatting">
+          <img src="img/max.png">
+          <h2> 阿尔法</h2>
+          <ion-option-button class="button-positive"
+                             ng-click="delete(item)">
+            删除
+          </ion-option-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            编辑
+          </ion-option-button>
+          <ion-delete-button class="ion-minus-circled"
+                             ng-click="items.splice($index, 1)">
+          </ion-delete-button>
+        </ion-item>
+        <ion-item class="item item-divider">
+          B
+        </ion-item>
+        <a class="item item-avatar" href="#">
+          <img src="img/max.png">
+
+          <h2> 布达拉斯</h2>
+        </a> <a class="item item-avatar" href="#">
+        <img src="img/max.png">
+
+        <h2> 布达拉斯</h2>
+      </a> <a class="item item-avatar" href="#">
+        <img src="img/max.png">
+
+        <h2> 布达拉斯</h2>
+      </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/adam.jpg">
+
+          <h2> Bob</h2>
+        </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/ben.png">
+
+          <h2> 布鲁斯</h2>
+        </a>
+
+        <div class="item item-divider">
+          Z
+        </div>
+        <a class="item item-avatar" href="#">
+          <img src="img/adam.jpg">
+
+          <h2> 赵倩1</h2>
+        </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/mike.png">
+
+          <h2> 赵倩2</h2>
+        </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/adam.jpg">
+
+          <h2> 赵倩3</h2>
+        </a>
+        <a class="item item-avatar" href="#">
+          <img src="img/max.png">
+
+          <h2> 赵倩4</h2>
+        </a>
+
+  </ion-content>
+</ion-view>

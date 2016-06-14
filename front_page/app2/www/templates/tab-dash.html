@@ -1,0 +1,46 @@
+<ion-view view-title="推荐">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="writeLetter()">
+      <i class="icon ion-plus "></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <div class="card margin_top">
+      <div class="item item-image cardBackground">
+        <img src="{{user.bkg}}"/>
+      </div>
+      <div class="bkgPic">
+        <img class="personalPic" src="{{user.headPic}}"/>
+        <a class="nickName">{{user.name}}</a>
+      </div>
+    </div>
+    <div>
+      <a class="item item-input ">
+          <select style="width:50%;float: left;" ng-change="changeType(type)" ng-model="type">
+            <option value="1" >校园热门</option>
+            <option value="2">网络最新</option>
+         </select>
+        <select style="width:50%;float: right;" ng-change="setGradeLevel(grade)" ng-model="grade">
+          <option value="1" >大一</option>
+          <option value="2">大二</option>
+          <option value="3">大三</option>
+          <option value="4">大四</option>
+        </select>
+      </a>
+    </div>
+
+    <div class="list">
+      <a class="item item-thumbnail-left" ng-repeat="item in rItems" href="#/details/{{item.id}}"
+         style="margin-top: 8px;">
+        <img src="./img/bainian.png">
+        <h2>{{item.name}}</h2>
+        <p><span class="font-bold">作者:</span>{{item.writer}}</p>
+        <!--<p><span class="font-bold">简介:</span>{{item.intro}}</p>-->
+        <p><span class="font-bold">标签:</span>{{item.span}}</p>
+      </a>
+    </div>
+
+
+  </ion-content>
+
+</ion-view>

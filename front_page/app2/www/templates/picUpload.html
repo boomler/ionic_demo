@@ -1,0 +1,38 @@
+<ion-view  view-title="头像上传" >
+  <ion-content>
+    <div >
+      <div class="file-box">
+          <textarea name='textfield' id='textfield' class='txt' readonly placeholder="选择文件" ></textarea>
+          <input type='button' class='btn' value='浏览...' />
+          <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value.toString().substring( this.value.lastIndexOf('\\')+1 ) ;angular.element(this).scope().fileChanged(event)" />
+      </div>
+      <div ng-show="imageCropStep == 2" style="width: 90%;height: 200px;padding: 5%;">
+          <image-crop
+            data-height="100"
+            data-width="100"
+            data-shape="square"
+            data-step="imageCropStep"
+            src="imgSrc"
+            data-result="result"
+            data-result-blob="resultBlob"
+            crop="initCrop"
+            padding="100"
+            max-size="1024"
+          >
+          </image-crop>
+          <button ng-click=" initCrop = true">截图</button>
+
+        </div>
+      <div ng-show="imageCropStep == 3" style="width: 90%;height: 200px;padding: 5%;">
+        <img ng-src="{{result}}"/>
+        <button ng-click="clear()">重置</button>
+        <button ng-click="upload()">保存</button>
+      </div>
+      <!--<div id="div2">-->
+        <!--<img ng-src="{{result}}">-->
+      <!--</div>-->
+</div>
+
+
+  </ion-content>
+</ion-view>

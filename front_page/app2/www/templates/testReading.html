@@ -1,0 +1,37 @@
+<ion-view  view-title="{{testcontent.chapter_count}}:{{testcontent.chapter_name}}" >
+<!--
+书本试读
+-->
+
+  <ion-nav-buttons side="right">
+    <button class="icon ion-ios-eye  button-clear" ng-click="AutoScroll();"></button>
+    <button class="icon ion-ios-world  button-clear" ng-click="startGravityScrollCtrl();"></button>
+  </ion-nav-buttons>
+
+  <!--<ion-nav-buttons side="left">-->
+    <!--<button class="icon ion-android-close button-clear"></button>-->
+  <!--</ion-nav-buttons>-->
+    <ion-content style="background-color: rgba(135, 119, 255, 0.16)">
+      <div>
+        <!--<h3>{{bookdata.name}}</h3>-->
+        <p style="font-size: larger ;line-height:150%;padding: 15px;">
+          　　{{testcontent.content}}
+        </p>
+      </div>
+
+    </ion-content>
+  <!--<div style="position: absolute;top:50px;left: 10px;">beta:{{currentValue}}</div>-->
+  <!--<div style="position: absolute;top:70px;left: 10px;">auto:{{isAutoScroll}}</div>-->
+  <!--<div style="position: absolute;top:90px;left: 10px;">gravity:{{isGravityScrollCtrl}}</div>-->
+  <!--<div style="position: absolute;top:110px;left: 10px;">old:{{oldValues}}</div>-->
+  <!--<div style="position: absolute;top:130px;left: 10px;">new:{{newValues}}</div>-->
+  <ion-footer-bar align-title="center" class="bar-stable">
+    <div class="buttons">
+      <button class="button" ng-click=" prevChapters()">上一章</button>
+    </div>
+    <h1 class="title button button-balanced" ng-click="collected()">收藏</h1>
+    <div class="buttons" ng-click="nextChapters()">
+      <button class="button">下一章</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>

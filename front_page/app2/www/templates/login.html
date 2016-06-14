@@ -1,0 +1,23 @@
+<ion-view  view-title="登录" >
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="用户名" ng-model="user_id">
+      </label>
+      <label class="item item-input" >
+        <input type="password" placeholder="密码" ng-model="user_psd">
+      </label>
+
+      <div>
+        <a class="button button-balanced" style="width: 50%" ng-click="login()">登录</a>
+        <a href="#/register" style="text-underline: auto;width: 50%;font-style: italic;padding:15px;margin-bottom: 1px;">忘记密码</a>
+      </div>
+
+
+    </div>
+    <div>{{user_id}}{{user_psd}}</div>
+  </ion-content>
+</ion-view>
